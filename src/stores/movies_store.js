@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { app  } from '../firebase/index.js'
+import { app } from '../firebase/index.js'
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
 
 export const useMoviesStore = defineStore({
@@ -9,7 +9,8 @@ export const useMoviesStore = defineStore({
     loading: false,
   }),
   getters: {
-    getMovies: (state) => state.movies
+    getMovies: state => state.movies,
+    getLoading: state => state.loading,
   },
   actions: {
     async fetchMovies() {

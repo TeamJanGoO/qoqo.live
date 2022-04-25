@@ -1,6 +1,11 @@
+<script setup>
+import { useMainCoverStore } from '../stores/maincover_store.js'
+const coverStore = useMainCoverStore()
+</script>
+
 <template>
-    <div class="relative w-full h-[calc(100vh-80px)]"
-        style="background-image:url(https://images3.alphacoders.com/118/thumb-1920-1185634.jpg);">
+    <div class="relative w-full h-[calc(100vh-80px)] bg-no-repeat bg-cover bg-center"
+        :style="`background-image:url(${coverStore.getCover});`">
         <div
             class="flex justify-center items-center absolute z-50 top-0 h-full w-full bg-gradient-to-r from-black/80 via-black/10">
             <div class="container py-10 ml-36">
