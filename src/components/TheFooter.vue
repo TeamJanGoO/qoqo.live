@@ -7,7 +7,7 @@ import TheLogo from '../components/TheLogo.vue'
         <a href="https://qoqo.ga" class="scale-150">
             <TheLogo />
         </a>
-        <p class="max-w-[80ch] text-gray-400 font-light text-sm text-center -mt-6">
+        <p class="max-w-[80ch] px-3 text-gray-400 font-light text-sm text-justify sm:text-center xl:-mt-2 lg:-mt-4 md:-mt-6">
             <span class="font-bold !text-lg">Disclaimer:-</span> <br> <a class="decoration-transparent text-yellow-500 hover:text-yellow-500 hover:decoration-yellow-500" href="https://qoqo.ga">QoQo.live</a> does not host any files on it's servers. All files or contents hosted on third party
             websites. <a class="decoration-transparent text-yellow-500 hover:text-yellow-500 hover:decoration-yellow-500" href="https://qoqo.ga">QoQo.live</a> does not accept responsibility for contents hosted on third party websites. We just
             index those links which are already available in internet
