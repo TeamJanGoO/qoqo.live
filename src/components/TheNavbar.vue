@@ -1,7 +1,7 @@
 <script setup>
 import TheLogo from '../components/TheLogo.vue'
 
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 
 const links = ref([
     {
@@ -24,12 +24,6 @@ const links = ref([
 
 const search = ref(null)
 
-// get the current route
-const currentRoute = computed((i) => {
-    const path = window.location.pathname
-    return path
-})
-
 window.addEventListener('keydown', (e) => {
     if (e.key === '/' && search.value.value.length === 0) {
         setTimeout(() => {
@@ -43,9 +37,9 @@ window.addEventListener('keydown', (e) => {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-to-b from-gray-800 to-gray-900/40">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <router-link class="navbar-brand" to="/">
                 <TheLogo />
-            </a>
+            </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -54,8 +48,8 @@ window.addEventListener('keydown', (e) => {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav flex gap-2 me-auto lg:ml-5 mb-2 mb-lg-0">
                     <li v-for="(link, index) in links" :key="index" class="nav-item">
-                        <a class="nav-link" :class="{ 'active !font-bold !text-yellow-400 !underline !underline-offset-4 !decoration-1 !decoration-yellow-400': currentRoute === link.path }" aria-current="page"
-                            :href="link.path">{{ link.name }}</a>
+                        <router-link class="nav-link" :class="{ 'active !font-bold !text-yellow-400 !underline !underline-offset-4 !decoration-1 !decoration-yellow-400': $route.path === link.path }" aria-current="page"
+                            :to="link.path">{{ link.name }}</router-link>
                     </li>
                 </ul>
                 <form class="d-flex w-full lg:pl-16">
