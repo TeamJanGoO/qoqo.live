@@ -20,5 +20,4 @@ app.use(router)
 // app.use(VuePlayerVideo, /* { default options with global component } */)
 app.use(createMetaManager())
 
-await router.isReady()
 app.mount('#app')
