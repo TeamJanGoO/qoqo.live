@@ -19,7 +19,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="transition-all duration-300 relative hover:border-b-4 hover:border-t-4 hover:border-yellow-500 hover:p-8 hover:scale-105 hover:cursor-pointer flex-auto min-w-[16rem] max-w-[24rem] h-[28rem] bg-black rounded-2xl shadow-lg hover:shadow-2xl"
+    <div class="transition-all duration-300 relative hover:border-b-4 hover:border-t-4 hover:border-yellow-500 hover:p-8 hover:scale-105 hover:cursor-pointer w-[17rem] h-[25rem] bg-black rounded-2xl shadow-lg hover:shadow-2xl bg-no-repeat bg-cover bg-center"
         :style="`background-image: url(${poster});`">
         <div
             class="absolute top-0 left-0 right-0 w-full h-20 bg-gradient-to-b from-gray-900/90 via-gray-900/70 to-gray-600/5 rounded-t-xl">

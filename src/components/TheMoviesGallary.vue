@@ -19,6 +19,15 @@ const movieStore = useMoviesStore()
 // onMounted(() => {
 //   getMovies()
 // })
+
+const loadMore = () => {
+    localStorage.setItem('scrollpos', window.scrollY)
+    movieStore.fetchMoreMovies()
+    setTimeout(() => {
+        var scrollpos = localStorage.getItem('scrollpos');
+        if (scrollpos) window.scrollTo(0, scrollpos)
+      }, 1000)
+}
 </script>
 
 <template>
@@ -26,10 +35,10 @@ const movieStore = useMoviesStore()
         <h1 class="text-center display-3 py-12 text-white"><span class="text-yellow-400 font-bold">Recent</span> Movies
         </h1>
         <div class="container flex flex-wrap justify-center gap-4">
-            <TheMovieCard v-for="(movie, index) in movieStore.getMovies" :key="index" :name="movie.name" :poster="movie.poster" :download="movie.download" />
+            <TheMovieCard v-for="(movie, index) in movieStore.getMovies" :key="index" :name="movie.name + ' (' + movie.year + ')'" :poster="movie.poster" :download="movie.download" />
         </div>
         <div class="flex gap-1 pt-12 mx-auto">
-            <button v-for="page in 6" type="button" class="btn btn-outline-warning" :class="{ 'active': page === 1 }">{{ page }}</button>
+            <button id="load-more-btn" @click="loadMore" tyepe="button" class="btn btn-lg btn-outline-warning">Load More</button>
         </div>
     </div>
 </template>
