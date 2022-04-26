@@ -7,7 +7,13 @@ import TheModal from './components/TheModal.vue'
 import TheLoading from './components/TheLoading.vue'
 import { useMoviesStore } from './stores/movies_store'
 import { useMainCoverStore } from './stores/maincover_store'
-import { File } from 'megajs'
+// import { File } from 'megajs'
+import { useMeta } from 'vue-meta'
+
+useMeta({
+  title: '',
+  htmlAttrs: { lang: 'en', amp: true }
+})
 
 const coverStore = useMainCoverStore()
 const movieStore = useMoviesStore()
@@ -24,6 +30,9 @@ onMounted(() => {
 </script>
 
 <template>
+  <metainfo>
+    <template v-slot:title="{ content }">{{ content ? `QoQo.live | ${content}` : `QoQo.live` }}</template>
+  </metainfo>
   <TheLoading v-if="movieStore.getLoading" />
   <main v-else class="bg-gray-800">
     <TheModal />
