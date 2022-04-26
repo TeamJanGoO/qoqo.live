@@ -16,8 +16,10 @@ const loadMore = () => {
 
 <template>
     <div id="movies" class="mx-auto bg-[#0f1525] w-full py-12 flex flex-col">
-        <h1 class="text-center text-[3.2rem] py-12 text-white"><span class="text-yellow-400 font-extrabold">Recent</span> <span class="font-extralight">Movies</span>
-        </h1>
+        <div class="text-center text-[3rem] py-12 text-white">
+            <span class="text-yellow-400 font-extrabold">Recent </span> 
+            <span class="!font-extralight">Movies</span>
+        </div>
         <div class="container flex flex-wrap justify-center gap-4">
             <TheMovieCard v-for="(movie, index) in movieStore.getMovies" :key="index"
                 :name="movie.name + ' (' + movie.year + ')'" :poster="movie.poster" :download="movie.download" />

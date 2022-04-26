@@ -9,17 +9,26 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        title: 'QoQo.live | Home'
+      }
     },
     {
       path: '/movies',
       name: 'movies',
-      component: MoviesView
+      component: MoviesView,
+      meta: {
+        title: 'QoQo.live | Movies'
+      }
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: NotFoundView
+      component: NotFoundView,
+      meta: {
+        title: 'QoQo.live | 404 - Not Found'
+      }
     }
   ]
 })

@@ -13,9 +13,13 @@ const coverStore = useMainCoverStore()
 const movieStore = useMoviesStore()
 
 onMounted(() => {
-  movieStore.loading = true
-  coverStore.fetchCover()
-  movieStore.fetchMovies()
+  // get current path name
+  const path = window.location.pathname
+  if (path === '/' || path === '/movies') {
+    movieStore.loading = true
+    coverStore.fetchCover()
+    movieStore.fetchMovies()
+  }
 })
 </script>
 
