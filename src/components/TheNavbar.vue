@@ -43,7 +43,7 @@ window.addEventListener('keydown', (e) => {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-to-b from-gray-800 to-gray-900/40">
         <div class="container">
-            <a class="navbar-brand mb-2" href="/">
+            <a class="navbar-brand" href="/">
                 <TheLogo />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -54,14 +54,14 @@ window.addEventListener('keydown', (e) => {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav flex gap-2 me-auto lg:ml-5 mb-2 mb-lg-0">
                     <li v-for="(link, index) in links" :key="index" class="nav-item">
-                        <a class="nav-link text-lg" :class="{ 'active !font-bold !text-yellow-400 !underline !underline-offset-4 !decoration-1 !decoration-yellow-400': currentRoute === link.path }" aria-current="page"
+                        <a class="nav-link" :class="{ 'active !font-bold !text-yellow-400 !underline !underline-offset-4 !decoration-1 !decoration-yellow-400': currentRoute === link.path }" aria-current="page"
                             :href="link.path">{{ link.name }}</a>
                     </li>
                 </ul>
                 <form class="d-flex w-full lg:pl-16">
-                    <input ref="search" class="px-3 py-3 !transition-[width] !duration-700 form-control me-2 ms-auto !w-[100%] lg:!w-[20rem] lg:focus:!w-[100%]" type="search" placeholder="Press '/' to focus" aria-label="Search">
-                    <button class="btn btn-warning p-3" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                    <input ref="search" class="text-warning !bg-gray-200/10 !border-gray-600 focus:!ring-0 focus:!outline-none px-3 py-1 !transition-[width] !duration-700 form-control me-1 ms-auto !w-[100%] lg:!w-[20rem] lg:focus:!w-[100%]" type="search" placeholder="Press '/' to focus" aria-label="Search">
+                    <button class="group btn btn-outline-warning !border-none" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-warning group-hover:!text-gray-900" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

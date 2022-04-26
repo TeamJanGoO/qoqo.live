@@ -19,7 +19,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="transition-all duration-300 relative hover:border-b-4 hover:border-t-4 hover:border-yellow-500 hover:p-8 hover:scale-105 hover:cursor-pointer w-[17rem] h-[25rem] bg-black rounded-2xl shadow-lg hover:shadow-2xl bg-no-repeat bg-cover bg-center"
+    <div class="transition-all duration-300 relative hover:border-b-4 hover:border-yellow-500 hover:p-8 hover:scale-105 select-none w-[17rem] h-[25rem] bg-black rounded-2xl shadow-lg hover:shadow-2xl bg-no-repeat bg-cover bg-center"
         :style="`background-image: url(${poster});`">
         <div
             class="absolute top-0 left-0 right-0 w-full h-20 bg-gradient-to-b from-gray-900/90 via-gray-900/70 to-gray-600/5 rounded-t-xl">
@@ -27,7 +27,7 @@ defineProps({
         </div>
         <div
             class="p-4 absolute bottom-0 left-0 right-0 bg-gradient-to-b from-gray-900/40 via-gray-900/80 to-gray-800 w-full rounded-b-xl">
-            <h1 class="h3 text-gray-100 !font-extrabold">{{ name }}</h1>
+            <h1 class="text-2xl pb-2 -mt-2 text-gray-100 !font-bold">{{ name }}</h1>
             <div class="flex gap-2">
                 <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-warning btn-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
